@@ -1,0 +1,106 @@
+.spark {
+  width: 100%;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  height: 500px;
+
+  &-container {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+
+    .spark-background {
+      position: absolute;
+      left: 67%;
+      top: 10px;
+    }
+
+    .spark-img {
+      position: relative;
+      width: 0;
+      height: 0;
+      transition: all 0.2s;
+      // 当hover任何子元素时，所有元素先变透明
+      &:hover .spark-img-item {
+        opacity: 0.2;
+      }
+
+      // 被hover的元素恢复不透明
+      &:hover .spark-img-item:hover {
+        opacity: 1;
+      }
+
+      &-item {
+        position: absolute;
+        width: 500px;
+        height: 300px;
+        border-radius: 12px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+        transform: rotate(-12deg);
+        transition: all 0.2s;
+
+        &-1 {
+          left: 100px;
+          top: 40px;
+
+          &:hover {
+            transform: none;
+            transition: all 0.2s;
+            scale: 1.15;
+            z-index: 100;
+          }
+        }
+
+        &-2 {
+          left: 250px;
+          top: 30px;
+
+          &:hover {
+            transform: none;
+            transition: all 0.2s;
+            scale: 1.15;
+            z-index: 100;
+          }
+        }
+
+        &-3 {
+          left: 400px;
+          top: 20px;
+
+          &:hover {
+            transform: none;
+            transition: all 0.2s;
+            scale: 1.15;
+            z-index: 100;
+          }
+        }
+      }
+
+      &-info {
+        position: absolute;
+        top: 350px;
+        left: 830px;
+        color: #FFF;
+        font-size: 18px;
+        font-weight: 700;
+        text-align: center;
+        pointer-events: none;
+        &-text {
+          font-size: 24px;
+          font-weight: 700;
+          width: 500px;
+
+          &-highlight {
+            width: 500px;
+            font-size: 24px;
+            background: linear-gradient(90deg, #6C67FF 0%, #973E99 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+          }
+        }
+      }
+    }
+  }
+}

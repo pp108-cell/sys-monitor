@@ -1,0 +1,128 @@
+.feature {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  &-container {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .feature-item {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      gap: 10px;
+      opacity: 0;
+      position: relative;
+
+      &:not(:first-child) {
+        margin-top: -100px;
+
+        .feature-item-header {
+          margin-bottom: 20px;
+        }
+      }
+
+      &-header {
+        display: flex;
+        align-items: flex-end;
+        gap: 20px;
+
+        &-img {
+          width: 84px;
+          height: 75px;
+          flex-shrink: 0;
+        }
+
+        &-title {
+          color: #FFF;
+          font-size: 18px;
+          font-weight: 700;
+          line-height: 28px;
+
+          .feature-item-header-subtitle {
+            color: #747474;
+            font-size: 14px;
+            margin: 0;
+          }
+        }
+      }
+
+      .feature-item-content-wrapper {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        position: relative;
+      }
+
+      &-content {
+        width: 70%;
+        border-radius: 30px;
+        background: rgba(91, 91, 91, 0.18);
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        padding: 20px 25px 0 25px;
+        display: flex;
+        height: 180px;
+
+        gap: 20px;
+
+        &-left {
+          display: flex;
+          flex-direction: column;
+          color: #C0C0C0;
+          gap: 15px;
+        }
+
+        &-right {
+          display: flex;
+          position: relative;
+          gap: 35px;
+
+          &-item {
+            width: 274px;
+            height: 143px;
+            position: absolute;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+            transform: rotate(-13deg);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+          }
+        }
+      }
+    }
+
+    .feature-right {
+      flex-direction: row-reverse;
+      position: relative;
+    }
+
+    .feature-item-placeholder {
+      position: absolute;
+      right: 670px;
+      top: -350px;
+      width: 553px;
+      height: 325.5px;
+      aspect-ratio: 736/435;
+      flex-shrink: 0;
+      z-index: 0;
+    }
+  }
+}
+
+@keyframes feature-item-fade-in {
+  0% {
+    opacity: 0;
+    transform: translateX(-10%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.feature-item.anime-fade-in {
+  animation: feature-item-fade-in 1.5s forwards;
+}

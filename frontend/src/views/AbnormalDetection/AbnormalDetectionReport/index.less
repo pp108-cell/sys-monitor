@@ -1,0 +1,210 @@
+.abnormal-detection-report-container {
+  width: 100%;
+  height: 100%;
+  color: #000;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 10px 15px 15px 15px;
+
+  .abnormal-detection-report-wrapper {
+    background: #FFF;
+    height: 100%;
+    overflow: hidden; // 防止整体滚动
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+
+    .abnormal-detection-report-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 25px;
+      border-bottom: 1px solid #D4D4D4;
+      font-size: 15px;
+      flex-shrink: 0; // 防止头部被压缩
+
+      &-left {
+        display: flex;
+        align-items: center;
+        width: 45%;
+        justify-content: space-between;
+
+        &-tools {
+          display: flex;
+          align-items: center;
+          gap: 25px;
+
+          &-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+
+            &-icon {
+              font-size: 22px;
+            }
+          }
+        }
+
+        &-export {
+          border-radius: 10px;
+          border: 1px solid #D4D4D4;
+          background: #FF8446;
+          padding: 4px 24px;
+          color: #fff;
+        }
+      }
+
+      &-right {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+    }
+
+    .abnormal-detection-report-content {
+      flex: 1;
+      display: flex;
+      gap: 10px;
+      overflow: hidden; // 防止内容区域整体滚动
+      position: relative;
+
+      &-left {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        font-size: 16px;
+        position: relative; // 为sticky定位提供参考
+        transition: all 0.5s;
+
+        .abnormal-detection-report-table {
+          width: 100%;
+          border-spacing: 0;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          border-radius: 8px;
+          overflow: hidden;
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+
+          &-header {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            flex-shrink: 0;
+
+            .abnormal-detection-report-table-tr {
+              background: transparent;
+
+              .abnormal-detection-report-table-td {
+                font-weight: 600;
+                font-size: 14px;
+                letter-spacing: 0.5px;
+                border-bottom: none;
+                border-right: 1px solid rgba(255, 255, 255, 0.2);
+                color: #fff;
+                text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+
+                &:last-child {
+                  border-right: none;
+                }
+              }
+            }
+          }
+
+          &-body {
+            flex: 1;
+            overflow-y: auto;
+            display: block;
+
+            // 自定义滚动条样式
+            &::-webkit-scrollbar {
+              width: 6px;
+            }
+
+            &::-webkit-scrollbar-track {
+              background: #f8f9fa;
+              border-radius: 3px;
+            }
+
+
+          }
+
+          &-tr {
+            display: grid;
+            grid-template-columns: 1fr 2fr 1.5fr;
+            height: 48px;
+            min-height: 48px;
+            transition: all 0.3s ease;
+            position: relative;
+
+            &.selected {
+              background: linear-gradient(90deg, #e6f3ff 0%, #f0f8ff 100%) !important;
+              border-left: 4px solid #667eea;
+              transform: translateY(-1px);
+              box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
+            }
+
+            &.export-mode.selected {
+              background: linear-gradient(90deg, #e6f7ff 0%, #f0fcff 100%) !important;
+              border-left: 4px solid #1890ff;
+            }
+          }
+
+          &-td {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8px 16px;
+            border-bottom: 1px solid #f0f2f5;
+            border-right: 1px solid #f0f2f5;
+            font-size: 14px;
+            line-height: 1.5;
+            color: #2c3e50;
+            transition: all 0.3s ease;
+
+            &:last-child {
+              border-right: none;
+            }
+
+            &.anomaly-types {
+
+              min-width: 0;
+              width: 100%;
+              font-weight: 500;
+            }
+          }
+        }
+      }
+
+      &-left.open {
+        width: 50%;
+        transition: all 0.5s;
+      }
+
+      &-right {
+        position: absolute;
+        width: 50%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        transition: all 0.5s;
+        right: -50%;
+
+        .abnormal-detection-report-content-preview-wrapper {
+          flex: 1;
+          width: 100%;
+        }
+      }
+
+      &-right.open {
+        transition: all 0.5s;
+        right: 0;
+      }
+    }
+  }
+}

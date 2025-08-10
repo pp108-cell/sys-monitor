@@ -1,0 +1,102 @@
+.abnormal-detection-wrapper {
+  width: 100%;
+  height: 100%;
+  color: #000;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+
+.abnormal-detection-upper {
+  color: rgb(8, 8, 8);
+  width: 100%;
+  height: 45%;
+  background-color: rgb(233, 240, 255);
+  border-bottom: 1px solid rgb(212, 235, 248);
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  overflow-y: auto;
+
+  h1 {
+    font-size: 40px;
+    font-weight: 500;
+
+  }
+}
+
+.upper-left-icon {
+  color: rgb(8, 8, 8);
+  width: 100%;
+  height: 100%;
+  gap: 50px;
+  display: flex;
+  align-items: center;
+  padding-left: 50px;
+}
+
+.abnormal-detection-lower {
+  color: rgb(8, 8, 8);
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  align-items: center;
+}
+
+.abnormal-detction-lower-icon {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.lower-icon {
+  display: flex;
+  gap: 50px;
+}
+
+.icon-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px;
+  gap: 40px;
+  border-radius: 8px;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.icon-item:hover {
+  transform: translate(-5px);
+  /* 上移5px */
+  background-color: #f5f8ff;
+  /* 背景色变浅蓝 */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  /* 添加阴影 */
+}
+
+.icon-text {
+  font-size: 35px;
+  color: #333;
+  font-weight: 200;
+}
+
+.abnormal-detction-lower-icon2 {
+  padding: 20px 40px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  align-self: flex-end;
+
+  h2 {
+    font-size: 25px;
+    font-weight: 100;
+  }
+}

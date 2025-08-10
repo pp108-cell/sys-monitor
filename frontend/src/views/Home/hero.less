@@ -1,0 +1,515 @@
+// Hero section styles
+.hero {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+}
+
+.hero-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.hero-copy {
+  position: relative;
+  z-index: 0;
+}
+
+.hero-title {
+  font-weight: 700;
+  color: #fff;
+
+  &-highlight {
+    color: #6C67FF;
+  }
+}
+
+.hero-paragraph {
+  font-size: 16px;
+  margin: 0 0 32px 0;
+  line-height: 1.6;
+  color: #747474;
+}
+
+.hero-cta {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  min-width: 140px;
+  animation: routesFadeIn 1s forwards;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.button-primary {
+  border-radius: 30px;
+  background: rgba(91, 91, 91, 0.18);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  text-decoration: none;
+  color: #fff;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(108, 103, 255, 0.3);
+  }
+}
+
+
+.mt-0 {
+  margin-top: 0;
+}
+
+// 响应式布局
+@media (min-width: 768px) {
+  .hero {
+    text-align: left;
+    padding-top: 64px;
+    z-index: 1;
+  }
+
+  .hero-inner {
+    flex-direction: row;
+    gap: 64px;
+
+  }
+
+  .hero-copy {
+    flex: 1.2;
+    max-width: none;
+    transform: translateY(-30%);
+  }
+
+  .hero-cta {
+    justify-content: flex-start;
+  }
+
+  .hero-title {
+    font-size: 34px;
+  }
+
+
+}
+
+.home-figure {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.home-figure svg {
+  width: 100%;
+  height: auto
+}
+
+.home-figure::before,
+.home-figure::after {
+  content: '';
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: 100%
+}
+
+.has-animations .home-figure::before,
+.has-animations .home-figure::after {
+  opacity: 0;
+  transition: opacity 2s ease
+}
+
+.has-animations .anime-ready.home-figure::before,
+.has-animations .anime-ready.home-figure::after {
+  opacity: 1
+}
+
+.home-figure::before {
+  top: -50.8%;
+  left: -15%;
+  width: 120.84%;
+  height: 150.78%;
+  background-image: url("../../assets/icons/hero-back-illustration.svg");
+  // opacity: 1 !important;
+  z-index: 0;
+}
+
+.home-figure::after {
+  top: -30%;
+  left: 70%;
+  width: 57.2%;
+  height: 87.88%;
+  background-image: url('../../assets/icons/hero-top-illustration.svg');
+  // opacity: 1 !important;
+  z-index: 0;
+}
+
+// 背景图片动画
+.has-animations .home-figure::before,
+.has-animations .home-figure::after {
+  opacity: 0;
+  transition: opacity 2s ease;
+}
+
+.has-animations .anime-ready .home-figure::before,
+.has-animations .anime-ready .home-figure::after {
+  opacity: 1 !important;
+}
+
+.home-figure-box {
+  position: absolute;
+  top: 0;
+  will-change: transform;
+}
+
+.home-figure-box-routes {
+  top: 50%;
+  left: 50%;
+  transform: translate(-35%, -65%);
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  .home-figure-box-route {
+    border-radius: 50px;
+    background: rgba(91, 91, 91, 0.18);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
+    width: 279px;
+    height: 59px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFF;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+    animation: routesFadeIn 1s forwards;
+
+    &:hover {
+      transform: translateY(-2px);
+      transition: all 0.2s;
+      box-shadow: 0 8px 25px rgba(108, 103, 255, 0.3);
+      color: #747bff;
+    }
+  }
+}
+
+@keyframes routesFadeIn {
+  0% {
+    transform: translateX(-20%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.home-figure-box-01,
+.home-figure-box-02,
+.home-figure-box-03,
+.home-figure-box-04,
+.home-figure-box-08,
+.home-figure-box-09 {
+  overflow: hidden
+}
+
+.home-figure-box-01::before,
+.home-figure-box-02::before,
+.home-figure-box-03::before,
+.home-figure-box-04::before,
+.home-figure-box-08::before,
+.home-figure-box-09::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transform-origin: 100% 100%
+}
+
+.home-figure-box-01 {
+  left: 75%;
+  top: 30%;
+  width: 20%;
+  height: 26%;
+  background: linear-gradient(to left top, #00BFFB, rgba(0, 191, 251, 0));
+  transform: rotateZ(45deg)
+}
+
+.home-figure-box-01::before {
+  background: linear-gradient(to left, #15181D 0%, rgba(21, 24, 29, 0) 60%);
+  transform: rotateZ(45deg) scale(1.5)
+}
+
+.home-figure-box-02 {
+  left: 40%;
+  top: 50%;
+  width: 28%;
+  height: 36%;
+  background: linear-gradient(to left top, #0270D7, rgba(2, 112, 215, 0));
+  transform: rotateZ(-45deg)
+}
+
+.home-figure-box-02::before {
+  background: linear-gradient(to top, #15181D 0%, rgba(21, 24, 29, 0) 60%);
+  transform: rotateZ(-45deg) scale(1.5)
+}
+
+.home-figure-box-03 {
+  left: 60%;
+  top: -50%;
+  width: 42%;
+  height: 56%;
+  background: linear-gradient(to left top, #00BFFB, rgba(0, 191, 251, 0))
+}
+
+.home-figure-box-03::before {
+  background: linear-gradient(to left, #15181D 0%, rgba(21, 24, 29, 0) 60%);
+  transform: rotateZ(45deg) scale(1.5)
+}
+
+.home-figure-box-04 {
+  left: 30%;
+  top: -15%;
+  width: 34%;
+  height: 45%;
+  background: linear-gradient(to left top, #0270D7, rgba(2, 112, 215, 0));
+  transform: rotateZ(-135deg)
+}
+
+.home-figure-box-04::before {
+  background: linear-gradient(to top, rgba(255, 255, 255, 0.24) 0%, rgba(255, 255, 255, 0) 60%);
+  transform: rotateZ(-45deg) scale(1.5)
+}
+
+.home-figure-box-05,
+.home-figure-box-06,
+.home-figure-box-07 {
+  background-color: #252b39;
+  box-shadow: -20px 32px 64px rgba(0, 0, 0, 0.25);
+}
+
+.home-figure-box-05 {
+  left: 7.4%;
+  top: 13.3%;
+  width: 48%;
+  height: 55%;
+  transform: perspective(500px) rotateY(-15deg) rotateX(8deg) rotateZ(-1deg)
+}
+
+.home-figure-box-06 {
+  left: 40%;
+  top: -5%;
+  width: 22%;
+  height: 30%;
+  transform: rotateZ(20deg)
+}
+
+.home-figure-box-07 {
+  left: -8.1%;
+  top: 36.4%;
+  width: 9%;
+  height: 12%;
+  transform: rotateZ(20deg)
+}
+
+.home-figure-box-08 {
+  left: 10.1%;
+  top: 61.6%;
+  width: 14%;
+  height: 19%;
+  background: #0270D7;
+  transform: rotateZ(-22deg)
+}
+
+.home-figure-box-08::before {
+  background: linear-gradient(to left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.48) 100%);
+  transform: rotateZ(45deg) scale(1.5)
+}
+
+.home-figure-box-09 {
+  left: 20%;
+  top: -15%;
+  width: 5%;
+  height: 6.5%;
+  background: #00BFFB;
+  transform: rotateZ(-52deg)
+}
+
+.home-figure-box-09::before {
+  background: linear-gradient(to left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.64) 100%);
+  transform: rotateZ(45deg) scale(1.5)
+}
+
+.home-figure-box-10 {
+  left: -13.8%;
+  top: 4.3%;
+  width: 2.2%;
+  height: 3%;
+  background: rgba(0, 191, 251, 0.32);
+  transform: rotateZ(-50deg)
+}
+
+// 动画关键帧定义
+@keyframes scaleAndRotate3D {
+  0% {
+    transform: perspective(500px) scaleX(0.05) scaleY(0) rotateY(0deg) rotateX(0deg) rotateZ(0deg);
+  }
+
+  25% {
+    transform: perspective(500px) scaleX(0.05) scaleY(1) rotateY(0deg) rotateX(0deg) rotateZ(0deg);
+  }
+
+  50% {
+    transform: perspective(500px) scaleX(1) scaleY(1) rotateY(0deg) rotateX(0deg) rotateZ(0deg);
+  }
+
+  100% {
+    transform: perspective(500px) scaleX(1) scaleY(1) rotateY(-15deg) rotateX(8deg) rotateZ(-1deg);
+  }
+}
+
+@keyframes scaleAndRotate2D {
+  0% {
+    transform: scaleX(0.05) scaleY(0) rotateZ(0deg);
+  }
+
+  25% {
+    transform: scaleX(0.05) scaleY(1) rotateZ(0deg);
+  }
+
+  50% {
+    transform: scaleX(1) scaleY(1) rotateZ(0deg);
+  }
+
+  100% {
+    transform: scaleX(1) scaleY(1) rotateZ(20deg);
+  }
+}
+
+@keyframes rotateScaleOpacity {
+  0% {
+    transform: rotateZ(0deg) scale(0.7);
+    opacity: 0;
+  }
+
+  100% {
+    transform: rotateZ(var(--rotation)) scale(1);
+    opacity: 1;
+  }
+}
+
+// 添加背景图片的淡入动画
+@keyframes backgroundFadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+// 动画触发条件
+.has-animations .home-figure-box {
+  opacity: 0;
+}
+
+.has-animations .anime-ready .home-figure-box {
+  opacity: 1;
+}
+
+// 为每个box添加动画
+.has-animations .anime-ready .home-figure-box-05 {
+  animation: scaleAndRotate3D 1.6s cubic-bezier(0.87, 0, 0.13, 1) forwards;
+  animation-delay: 0.4s;
+  transform: perspective(500px) scaleX(0.05) scaleY(0) rotateY(0deg) rotateX(0deg) rotateZ(0deg);
+}
+
+.has-animations .anime-ready .home-figure-box-06,
+.has-animations .anime-ready .home-figure-box-07 {
+  animation: scaleAndRotate2D 1.6s cubic-bezier(0.87, 0, 0.13, 1) forwards;
+  animation-delay: 0.4s;
+  transform: scaleX(0.05) scaleY(0) rotateZ(0deg);
+}
+
+.has-animations .anime-ready .home-figure-box-01 {
+  --rotation: 45deg;
+  animation: rotateScaleOpacity 0.8s cubic-bezier(0.87, 0, 0.13, 1) forwards;
+  animation-delay: 1.2s;
+  transform: rotateZ(0deg) scale(0.7);
+  opacity: 0;
+}
+
+.has-animations .anime-ready .home-figure-box-02 {
+  --rotation: -45deg;
+  animation: rotateScaleOpacity 0.7s cubic-bezier(0.87, 0, 0.13, 1) forwards;
+  animation-delay: 1.0s;
+  transform: rotateZ(0deg) scale(0.7);
+  opacity: 0;
+}
+
+.has-animations .anime-ready .home-figure-box-03 {
+  --rotation: 0deg;
+  animation: rotateScaleOpacity 0.6s cubic-bezier(0.87, 0, 0.13, 1) forwards;
+  animation-delay: 0.8s;
+  transform: rotateZ(0deg) scale(0.7);
+  opacity: 0;
+}
+
+.has-animations .anime-ready .home-figure-box-04 {
+  --rotation: -135deg;
+  animation: rotateScaleOpacity 0.8s cubic-bezier(0.87, 0, 0.13, 1) forwards;
+  animation-delay: 1.4s;
+  transform: rotateZ(0deg) scale(0.7);
+  opacity: 0;
+}
+
+.has-animations .anime-ready .home-figure-box-08 {
+  --rotation: -22deg;
+  animation: rotateScaleOpacity 0.7s cubic-bezier(0.87, 0, 0.13, 1) forwards;
+  animation-delay: 1.1s;
+  transform: rotateZ(0deg) scale(0.7);
+  opacity: 0;
+}
+
+.has-animations .anime-ready .home-figure-box-09 {
+  --rotation: -52deg;
+  animation: rotateScaleOpacity 0.6s cubic-bezier(0.87, 0, 0.13, 1) forwards;
+  animation-delay: 0.9s;
+  transform: rotateZ(0deg) scale(0.7);
+  opacity: 0;
+}
+
+.has-animations .anime-ready .home-figure-box-10 {
+  --rotation: -50deg;
+  animation: rotateScaleOpacity 0.8s cubic-bezier(0.87, 0, 0.13, 1) forwards;
+  animation-delay: 1.3s;
+  transform: rotateZ(0deg) scale(0.7);
+  opacity: 0;
+}

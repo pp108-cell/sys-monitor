@@ -1,0 +1,10 @@
+# 忽略 IDE 相关文件夹
+.idea/
+.venv/
+.vscode/
+
+# Python 缓存
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
